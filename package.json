@@ -2,14 +2,14 @@
   "name": "project-js-group-5",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/WeronikaBabik/project-js-group-5",
+  "homepage": "https://github.com/WeronikaBabik/project-js-group-5.git",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /project-js-group-5/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WeronikaBabik/project-js-group-5"
+    "url": "git+https://github.com/WeronikaBabik/project-js-group-5.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
