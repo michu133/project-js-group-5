@@ -1,1 +1,1 @@
-import './sass/index.scss';
+import dataFromApi from './scripts/api';
