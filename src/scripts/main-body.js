@@ -1,18 +1,11 @@
-import { getBySearch, getTrending } from './api';
-const searchForm = document.querySelector('.form-search');
-const gallery = document.querySelector('.gallery');
+import { getTrending } from './api';
 
-searchForm.addEventListener('submit', showResultsOnSearch);
-
-function showResultsOnSearch(e) {
-  e.preventDefault();
-  getBySearch({ query, page }).then(data => {});
-}
+export const gallery = document.querySelector('.gallery');
 
 getTrending().then(data => {
   gallery.insertAdjacentHTML('beforeend', showGallery(data));
 });
-function showGallery(movies) {
+export function showGallery(movies) {
   const genres = Object.values(movies[0].genre_ids).join(',');
   return movies
     .map(
