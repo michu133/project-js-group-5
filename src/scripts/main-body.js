@@ -9,7 +9,7 @@ function showResultsOnSearch(e) {
   getBySearch({ query, page }).then(data => {});
 }
 
-getTrending((page = 1)).then(data => {
+getTrending().then(data => {
   gallery.insertAdjacentHTML('beforeend', showGallery(data));
 });
 function showGallery(movies) {

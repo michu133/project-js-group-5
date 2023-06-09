@@ -9,7 +9,7 @@ export async function getBySearch({ query = '', page = '1' }) {
   if (!response.ok) {
     reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
   }
-  const movies = await response.json();
+  const { results: movies } = await response.json();
   return movies;
 }
 
@@ -24,14 +24,12 @@ export async function getTrending(page = 1) {
   return movies;
 }
 export async function getInfoAboutMovie(movieId, query) {
-  fetch(`${API_URL}/movie?api_key=${API_KEY}&movie_id=${movieId}`).then(
-    response => {
-      if (!response.ok) {
-        reject(
-          Notiflix.Notify.failure('Oops, there is no movie with that name')
-        );
-      }
-      return response.json();
-    }
+  const response = await fetch(
+    `${API_URL}/movie?api_key=${API_KEY}&movie_id=${movieId}`
   );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: movies } = await response.json();
+  return movies;
 }
