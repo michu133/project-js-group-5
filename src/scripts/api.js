@@ -1,5 +1,5 @@
 const API_KEY = `d793dd4ca6e7be6c8e5a071661ccb72e`;
-const API_URL = `https://api.themoviedb.org/3`;
+const API_URL = `https://api.themoviedb.org/3/`;
 import Notiflix from 'notiflix';
 
 export async function getBySearch({ query = '', page = '1' }) {
