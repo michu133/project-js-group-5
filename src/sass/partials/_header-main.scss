@@ -51,7 +51,7 @@
 }
 
 .FilmotekaText {
-  font-family: $family;
+  font-family: $family, sans-serif;
   font-weight: 500;
   font-size: 30px;
   line-height: 1.16;
@@ -88,7 +88,7 @@
 }
 
 .Link1 {
-  font-family: $family;
+  font-family: $family, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
@@ -111,7 +111,7 @@
 }
 
 .Link2 {
-  font-family: $family;
+  font-family: $family, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
@@ -161,11 +161,15 @@
   position: absolute;
   left: 0px;
   top: -20px;
-  font-family: $family;
+  font-family: $family, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.14s;
+  line-height: 1.14;
   width: 90%;
+}
+.search-box:focus-visible {
+  outline-style: none;
+  box-shadow: 1px;
 }
 .form-search {
   border: 0px;
