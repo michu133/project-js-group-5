@@ -36,6 +36,7 @@
     height: 216px;
     background-image: url(/src/images/header-main/abstract-background-with-red-lines-desktop\ x1.png);
     background-color: black;
+    background-size: 1280px 216px;
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       background: url(/src/images/header-main/abstract-background-with-red-lines-desktop\ x2.png);
       background-size: 1280px 216px;
@@ -55,46 +56,102 @@
   font-size: 30px;
   line-height: 1.16;
   font-size: 0;
+  position: absolute;
+
+  @include tablet {
+    font-size: 15px;
+    color: $textColor;
+    font-size: 30px;
+    top: 22px;
+    left: 63px;
+  }
+  @include desktop {
+    position: absolute;
+    left: 66px;
+    top: 10px;
+  }
 }
 .FilmotekaLogo {
   position: absolute;
   left: 20px;
   top: 40px;
+  @include tablet {
+    left: 34px;
+    top: 57px;
+  }
+  @include desktop {
+    left: 32px;
+    top: 45px;
+  }
 }
-// .Links {
-//   position: absolute;
-//   left: 156px;
-//   top: 44px;
+// .Filmoteka {
+//   width: 100%;
+//   height: 100%;
+//   position: relative;
 // }
 .Link1 {
   font-family: $family;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 1.16;
   text-decoration: none;
   color: $textColor;
   position: absolute;
   left: 156px;
   top: 44px;
+  @include tablet {
+    left: 592px;
+    top: 49px;
+  }
+  @include desktop {
+    left: 1105px;
+    top: 49px;
+  }
 }
+.Link1:hover {
+  border-bottom: 2px solid $headerFocusLine;
+}
+
 .Link2 {
   font-family: $family;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 1.16;
   text-decoration: none;
   color: $textColor;
   position: absolute;
   left: 231px;
   top: 44px;
+  @include tablet {
+    position: absolute;
+    left: 667px;
+    top: 49px;
+  }
+  @include desktop {
+    left: 1179px;
+    top: 49px;
+  }
 }
+.Link2:hover {
+  border-bottom: 2px solid $headerFocusLine;
+}
+
 .movie__info {
-  padding-top: 300px;
+  padding-top: 150px;
 }
 .SearchBox {
   position: absolute;
   top: 138px;
   left: 20px;
+  @include tablet {
+    position: absolute;
+    left: 216px;
+    top: 135px;
+  }
+  @include desktop {
+    left: 443px;
+    top: 136px;
+  }
 }
 .search-box {
   border: none;
@@ -107,6 +164,7 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 1.16;
+  width: 90%;
 }
 .form-search {
   border: 0px;
@@ -116,6 +174,12 @@
   position: relative;
   top: 0px;
   left: 0px;
+  @include tablet {
+    width: 336px;
+  }
+  @include desktop {
+    width: 394px;
+  }
 }
 .form-submit {
   background-repeat: no-repeat;
@@ -130,4 +194,10 @@
   position: absolute;
   top: -19px;
   left: 269px;
+  @include tablet {
+    left: 325px;
+  }
+  @include desktop {
+    left: 380px;
+  }
 }
