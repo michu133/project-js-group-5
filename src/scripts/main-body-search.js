@@ -1,4 +1,4 @@
-import { getBySearch, getInfoAboutMovie, getTrending } from './api';
+import { getBySearch } from './api';
 import { gallery } from './main-body';
 import { showGallery } from './main-body';
 import Notiflix from 'notiflix';
