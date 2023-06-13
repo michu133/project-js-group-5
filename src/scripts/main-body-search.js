@@ -1,13 +1,13 @@
 import { getBySearch } from './api';
-import { gallery } from './main-body';
+import { mainGallery } from './main-body';
 import { showGallery } from './main-body';
 import Notiflix from 'notiflix';
 
-const searchForm = document.querySelector('.form-search');
-const input = document.querySelector('.search-box');
+const searchForm = document.querySelector('.search-form');
+const input = document.querySelector('.search-input');
 
 function removeAll() {
-  gallery.innerHTML = '';
+  mainGallery.innerHTML = '';
 }
 
 searchForm.addEventListener('submit', showResultsOnSearch);
@@ -19,7 +19,7 @@ function showResultsOnSearch(e) {
   getBySearch({ query, page }).then(data => {
     if (data.length !== 0) {
       removeAll();
-      gallery.innerHTML = showGallery(data);
+      mainGallery.innerHTML = showGallery(data);
     }
     if (data.length === 0 && query !== 0) {
       return Notiflix.Notify.failure('Oops, there is no movie with that name');
@@ -27,6 +27,5 @@ function showResultsOnSearch(e) {
     if (input.value === 0) {
       removeAll();
     }
-    console.log(query);
   });
 }

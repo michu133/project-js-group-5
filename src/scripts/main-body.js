@@ -1,9 +1,9 @@
 import { getTrending } from './api';
 
-export const gallery = document.querySelector('.gallery');
+export const mainGallery = document.querySelector('.gallery');
 
 getTrending().then(data => {
-  gallery.insertAdjacentHTML('beforeend', showGallery(data));
+  mainGallery.insertAdjacentHTML('beforeend', showGallery(data));
 });
 export function showGallery(movies) {
   const genres = Object.values(movies[0].genre_ids).join(',');
