@@ -158,12 +158,17 @@
   top: -20px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.14s;
+  line-height: 1.14;
   width: 90%;
   &:focus {
     outline: none;
   }
 }
+.search-box:focus-visible {
+  outline-style: none;
+}
+.form-search {
+  border: 0px;
 .search-form {
   border-bottom: 1px solid $textColor;
   width: 280px;
