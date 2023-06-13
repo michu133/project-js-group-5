@@ -27,6 +27,5 @@ function showResultsOnSearch(e) {
     if (input.value === 0) {
       removeAll();
     }
-    console.log(query);
   });
 }
