@@ -65,11 +65,12 @@
   @include desktop {
   }
   &__name {
-    visibility: hidden;
+    display: none;
     color: $textColor;
     font-size: 30;
+    line-height: 35px;
     @include tablet {
-      visibility: visible;
+      display: contents;
     }
     @include desktop {
     }
@@ -84,12 +85,54 @@
   &__item a {
     color: $textColor;
     font-size: 12;
+    line-height: 14px;
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $resultColor;
+    }
   }
 }
 .library-header__buttons__containter {
   display: flex;
+  gap: 20px;
   flex-direction: row;
   text-align: center;
   align-items: center;
   justify-content: center;
+  @include tablet {
+    gap: 32px;
+  }
+  @include desktop {
+    gap: 16px;
+  }
+}
+.library-header__buttons__button {
+  width: 130px;
+  height: 44px;
+  background: 0;
+  border: 1px solid #ffffff;
+  border-radius: 5;
+  color: $textColor;
+  font-size: 12;
+  line-height: 16px;
+  &.active {
+    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+    background-color: #ff6b01;
+    border-color: #ff6b01;
+  }
+  &:hover,
+  &:focus {
+    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+    background-color: #ff6b01;
+    border-color: #ff6b01;
+    cursor: pointer;
+  }
+  @include tablet {
+    width: 152px;
+    height: 44px;
+  }
+  @include desktop {
+    width: 148px;
+    height: 42px;
+  }
 }
