@@ -169,37 +169,38 @@
 }
 .form-search {
   border: 0px;
-.search-form {
-  border-bottom: 1px solid $textColor;
-  width: 280px;
-  padding-left: 20px;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  @include tablet {
-    width: 336px;
+  .search-form {
+    border-bottom: 1px solid $textColor;
+    width: 280px;
+    padding-left: 20px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    @include tablet {
+      width: 336px;
+    }
+    @include desktop {
+      width: 394px;
+    }
   }
-  @include desktop {
-    width: 394px;
-  }
-}
-.form-submit {
-  background-repeat: no-repeat;
-  border: none;
-  background-position: center;
-  height: 12px;
-  width: 12px;
-  background-color: transparent;
-  backface-visibility: hidden;
-  background-image: url(/src/images/header-main/search.png);
-  background-size: 12px 12px;
-  position: absolute;
-  top: -19px;
-  left: 269px;
-  @include tablet {
-    left: 325px;
-  }
-  @include desktop {
-    left: 380px;
+  .form-submit {
+    background-repeat: no-repeat;
+    border: none;
+    background-position: center;
+    height: 12px;
+    width: 12px;
+    background-color: transparent;
+    backface-visibility: hidden;
+    background-image: url(/src/images/header-main/search.png);
+    background-size: 12px 12px;
+    position: absolute;
+    top: -19px;
+    left: 269px;
+    @include tablet {
+      left: 325px;
+    }
+    @include desktop {
+      left: 380px;
+    }
   }
 }
