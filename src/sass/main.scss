@@ -1,6 +1,7 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
 @import './utils/_common';
 @import './utils/_mixins';
 @import './utils/_variables';
-@import './partials/footer';
-@import './partials/header-main';
-
+@import './partials/_footer';
+@import './partials/_header-main';
+@import './partials/_main-body';

@@ -1,0 +1,18 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+.movie-image {
+  width: 280px;
+  height: 398px;
+  @include tablet {
+    width: 336px;
+    height: 455px;
+  }
+}
+.movie__info {
+  margin: 0;
+  padding-top: 8px;
+}

@@ -5,6 +5,8 @@
   background-repeat: no-repeat;
   background-color: black;
   position: relative;
+  opacity: 90%;
+  margin-bottom: 0;
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     background: url(/src/images/header-main/abstract-background-with-red-lines\ x2.png);
     background-size: 320px 230px;
@@ -51,7 +53,6 @@
 }
 
 .FilmotekaText {
-  font-family: $family;
   font-weight: 500;
   font-size: 30px;
   line-height: 1.16;
@@ -88,7 +89,6 @@
 }
 
 .Link1 {
-  font-family: $family;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
@@ -107,11 +107,10 @@
   }
 }
 .Link1:hover {
-  border-bottom: 2px solid $headerFocusLine;
+  border-bottom: 2px solid $resultColor;
 }
 
 .Link2 {
-  font-family: $family;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
@@ -131,13 +130,13 @@
   }
 }
 .Link2:hover {
-  border-bottom: 2px solid $headerFocusLine;
+  border-bottom: 2px solid $resultColor;
 }
 
 .movie__info {
   padding-top: 150px;
 }
-.SearchBox {
+.search-box {
   position: absolute;
   top: 138px;
   left: 20px;
@@ -154,21 +153,22 @@
 ::placeholder {
   color: $textColor;
 }
-.search-box {
+.search-input {
   border: none;
   color: $textColor;
   background-color: transparent;
   position: absolute;
   left: 0px;
   top: -20px;
-  font-family: $family;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14s;
   width: 90%;
+  &:focus {
+    outline: none;
+  }
 }
-.form-search {
-  border: 0px;
+.search-form {
   border-bottom: 1px solid $textColor;
   width: 280px;
   padding-left: 20px;

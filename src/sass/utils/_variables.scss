@@ -1,40 +1,15 @@
-/* Global */
-$family: 'Roboto';
-$style: 'Medium';
-ul, ol {
-    list-style: none;
-    padding: 0;
-  }
-  a, p {
-    text-decoration: none;
-  }
-container, div, section {
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
 /* Header */
-$headerBackground: #10181D;
-$darkGradient: #7D0313;
-$brightGradient: #BB1021;
-$headerSearchLine: #FFFFFF;
-$headerFocusLine: #FF001B;
+$headerBackground: #10181d;
+$darkGradient: #7d0313;
+$brightGradient: #bb1021;
 $searchStyle: 'Regular';
-$textColor: #FFFFFF; 
-$resultColor: #FF001B;
-
-/* Body */
-$bodyBackground: #FFFFFF;
-$nameColor: #000000;
-$categoryColor: #FF6B08;
+$textColor: #ffffff;
+$resultColor: #ff001b;
 
 /* Footer */
-$UpBackground: #FFFFFF;
-$DownBackground: #F7F7F7;
+$downBackground: #f7f7f7;
 $numbColor: #000000;
-$numbFocus: #FFFFFF;
-$numbBackground: #FF6B08;
-$arrowBackground: #F7F7F7;
+$numbBackground: #ff6b08;
 $footerText: #545454;
-$heart: #FF6B08;
-$hover-heart: #FF00FF;
+$heart: #ff6b08;
+$hover-heart: #ff00ff;

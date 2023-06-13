@@ -1,1 +1,19 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
+/* Global */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+a,
+p {
+  text-decoration: none;
+}
+.container,
+div,
+section {
+  max-width: 1280px;
+  margin: 0 auto;
+}
