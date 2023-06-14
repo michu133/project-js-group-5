@@ -1,0 +1,16 @@
+.movie-icon {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+svg {
+  fill: $heart;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.library-notification {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.16;
+  color: $heart;
+}
