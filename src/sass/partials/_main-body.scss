@@ -41,9 +41,9 @@
     z-index: 0;
     cursor: pointer;
   }
-  &__info img:hover {
-    transform: perspective(400px) scale(110%);
-    box-shadow: 18px 24px 24px 0px $headerBackground;
+  &__info:hover img {
+    transform: perspective(400px) scale(102%);
+    box-shadow: -30px -13px 29px 0px $headerBackground;
     z-index: 1;
   }
   &__info {
@@ -51,6 +51,9 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1.17;
+    @include desktop {
+      font-size: 20px;
+    }
   }
   &__name {
     text-transform: uppercase;
