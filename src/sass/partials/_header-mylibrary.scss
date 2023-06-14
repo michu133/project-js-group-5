@@ -19,7 +19,7 @@
   @include tablet {
     width: 100%;
     height: 219px;
-    padding: 45px 32px 0px 32px;
+    padding: 45px 32px 60px 32px;
     background-image: linear-gradient(#00000056, #00000056),
       url(/src/images/header-mylibrary/tablet_library_header_background_1x.jpg);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -51,9 +51,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 60px;
+
   @include tablet {
-    margin-bottom: 40px;
   }
   @include desktop {
   }
@@ -81,7 +80,7 @@
   display: flex;
   flex-direction: row;
   gap: 40px;
-
+  align-items: center;
   &__item a {
     color: $textColor;
     font-size: 12;
@@ -99,6 +98,8 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  position: relative;
+  top: 10px;
   @include tablet {
     gap: 32px;
   }
