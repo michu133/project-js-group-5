@@ -17,6 +17,7 @@ export function showGallery(movies) {
         src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
         alt="movie-title"
         loading="lazy"
+        href="#" data-hystmodal="#myModal"
         />
       <p class="movie__name">${movie.title}</p>
       <p class="movie__description">${genres} | ${date}</p>
