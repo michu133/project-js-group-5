@@ -23,20 +23,32 @@ export async function getTrending(page = 1) {
   const { results: movies } = await response.json();
   return movies;
 }
-export async function getInfoAboutMovie(movieId, query) {
+export async function getInfoAboutMovie(movieId) {
   const response = await fetch(
     `${API_URL}/movie?api_key=${API_KEY}&movie_id=${movieId}`
   );
   if (!response.ok) {
     reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
   }
-  const { results: movies } = await response.json();
-  return movies;
+  const { results: movie } = await response.json();
+  console.log(movie);
+  return movie;
+}
+export async function getMovieTrailer(movieId) {
+  const response = await fetch(
+    `${API_URL}/movie/${movieId}/videos?api_key=${API_KEY}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: trailer } = await response.json();
+  console.log(trailer);
+  return trailer;
 }
 export async function listOfGenres() {
   const response = await fetch(
     `${API_URL}/genre/movie/list?api_key=${API_KEY}`
   );
-  const { genres: genre } = await response.json();
-  return genre;
+  const { results: genres } = await response.json();
+  return genres;
 }
