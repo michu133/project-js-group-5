@@ -1,0 +1,54 @@
+.btn-switch-library {
+  background-color: $numbColor;
+  border: solid 3px $textColor;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 27px;
+  outline-width: 5px;
+  width: 47px;
+}
+
+.icon-library {
+  background-color:$footerText;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  height: 19px;
+  margin: 16px 25px;
+  position: relative;
+  top: -16px;
+  right: 90%;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 19px;
+}
+.dark-library {
+  background-color: $numbColor;
+}
+.dark-library .icon-library {
+  background: $switchColor;
+  transform: translateX(15px);
+}
+.dark-library .icon-library::after {
+  content: '';
+  background-color: $numbColor;
+  display: block;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  left: -4px;
+  position: absolute;
+  top: 2px;
+}
+/* LIGHT MODE */
+.light-library {
+  background-color: $textColor;
+}
+
+.light-library .icon-library {
+  background: $footerText;
+  transform: translateX(0);
+}
+
+.light-library .icon-library::after {
+  content: none;
+}
