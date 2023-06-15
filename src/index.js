@@ -6,3 +6,4 @@ import * as search from './scripts/main-body-search';
 import * as footerModal from './scripts/footer-modal';
 import * as switchBtn from './scripts/switchBtn';
 import * as modal from './scripts/modal';
+import * as genres from './scripts/genres';

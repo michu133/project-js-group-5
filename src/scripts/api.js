@@ -31,7 +31,6 @@ export async function getInfoAboutMovie(movieId) {
     reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
   }
   const { results: movie } = await response.json();
-  console.log(movie);
   return movie;
 }
 export async function getMovieTrailer(movieId) {
@@ -42,13 +41,12 @@ export async function getMovieTrailer(movieId) {
     reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
   }
   const { results: trailer } = await response.json();
-  console.log(trailer);
   return trailer;
 }
 export async function listOfGenres() {
   const response = await fetch(
     `${API_URL}/genre/movie/list?api_key=${API_KEY}`
   );
-  const { results: genres } = await response.json();
+  const genres = await response.json();
   return genres;
 }
