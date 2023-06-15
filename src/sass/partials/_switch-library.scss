@@ -3,39 +3,38 @@
   border: solid 3px $textColor;
   border-radius: 50px;
   cursor: pointer;
-  height: 27px;
+  height: 20px;
   outline-width: 5px;
-  width: 47px;
+  width: 30px;
 }
 
 .icon-library {
   background-color: $footerText;
   border-radius: 100%;
   content: '';
-  // display: block;
-  height: 19px;
+  height: 13px;
   position: relative;
-  right: 25%;
+  right: 35%;
   transition: background-color 0.3s, transform 0.3s;
-  width: 19px;
+  width: 15px;
 }
 .dark-library {
   background-color: $numbColor;
 }
 .dark-library .icon-library {
   background: $switchColor;
-  transform: translateX(15px);
+  transform: translateX(7px);
 }
 .dark-library .icon-library::after {
   content: '';
   background-color: $numbColor;
   display: block;
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   border-radius: 100%;
   left: -4px;
   position: absolute;
-  top: 2px;
+  top: 0;
 }
 /* LIGHT MODE */
 .light-library {

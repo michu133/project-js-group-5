@@ -3,10 +3,10 @@
   border: solid 3px $textColor;
   border-radius: 50px;
   cursor: pointer;
-  height: 27px;
+  height: 20px;
   outline-width: 5px;
   position: absolute;
-  width: 47px;
+  width: 30px;
   top: 35px;
   right: 60%;
   @include tablet {
@@ -24,31 +24,31 @@
   border-radius: 100%;
   content: '';
   display: block;
-  height: 19px;
+  height: 13px;
   margin: 16px 25px;
   position: relative;
   top: -16px;
-  right: 90%;
+  right: 230%;
   transition: background-color 0.3s, transform 0.3s;
-  width: 19px;
+  width: 15px;
 }
 .dark {
   background-color: $numbColor;
 }
 .dark .icon {
   background: $switchColor;
-  transform: translateX(15px);
+  transform: translateX(7px);
 }
 .dark .icon::after {
   content: '';
   background-color: $numbColor;
   display: block;
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   border-radius: 100%;
   left: -4px;
   position: absolute;
-  top: 2px;
+  top: 0;
 }
 /* LIGHT MODE */
 .light {
