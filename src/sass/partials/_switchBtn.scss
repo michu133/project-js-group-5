@@ -5,10 +5,8 @@
   cursor: pointer;
   height: 27px;
   outline-width: 5px;
-  position: absolute;
   width: 47px;
-  top: 35px;
-  right: 60%;
+  margin: 40px 20px;
   @include tablet {
     left: 65%;
     top: 40px;
