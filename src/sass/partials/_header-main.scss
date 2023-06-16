@@ -1,0 +1,207 @@
+.Header {
+  width: 320px;
+  height: 230px;
+  background-image: url(/src/images/header-main/abstract-background-with-red-lines\ 1.png);
+  background-repeat: no-repeat;
+  background-color: black;
+  position: relative;
+  opacity: 90%;
+  margin-bottom: 0;
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background: url(/src/images/header-main/abstract-background-with-red-lines\ x2.png);
+    background-size: 320px 230px;
+    background-color: black;
+  }
+  @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+    background: url(/src/images/header-main/abstract-background-with-red-lines\ x3.png);
+    background-size: 320px 230px;
+    background-color: black;
+  }
+  @include tablet {
+    width: 768px;
+    height: 216px;
+    background-image: url(/src/images/header-main/abstract-background-with-red-lines-tablet\ x1.png);
+    background-size: 768px 216px;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background: url(/src/images/header-main/abstract-background-with-red-lines-tablet\ x2.png);
+      background-size: 768px 216px;
+      background-color: black;
+    }
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+      background: url(/src/images/header-main/abstract-background-with-red-lines-tablet\ x3.png);
+      background-size: 768px 216px;
+      background-color: black;
+    }
+  }
+  @include desktop {
+    width: 1280px;
+    height: 216px;
+    background-image: url(/src/images/header-main/abstract-background-with-red-lines-desktop\ x1.png);
+    background-color: black;
+    background-size: 1280px 216px;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background: url(/src/images/header-main/abstract-background-with-red-lines-desktop\ x2.png);
+      background-size: 1280px 216px;
+      background-color: black;
+    }
+    @media (min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+      background: url(/src/images/header-main/abstract-background-with-red-lines-desktop\ x3.png);
+      background-size: 1280px 216px;
+      background-color: black;
+    }
+  }
+}
+
+.FilmotekaText {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.16;
+  font-size: 0;
+  position: absolute;
+
+  @include tablet {
+    font-size: 15px;
+    color: $textColor;
+    font-size: 30px;
+    top: 22px;
+    left: 63px;
+  }
+  @include desktop {
+    position: absolute;
+    left: 66px;
+    top: 10px;
+  }
+}
+.FilmotekaLogo {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  width: 24px;
+  height: 24px;
+  @include tablet {
+    left: 34px;
+    top: 57px;
+  }
+  @include desktop {
+    left: 32px;
+    top: 45px;
+  }
+}
+
+.Link1 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  text-decoration: none;
+  color: $textColor;
+  position: absolute;
+  left: 156px;
+  top: 44px;
+  @include tablet {
+    left: 592px;
+    top: 49px;
+  }
+  @include desktop {
+    left: 1105px;
+    top: 49px;
+  }
+}
+.Link1:hover {
+  border-bottom: 2px solid $resultColor;
+}
+
+.Link2 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  text-decoration: none;
+  color: $textColor;
+  position: absolute;
+  left: 231px;
+  top: 44px;
+  @include tablet {
+    position: absolute;
+    left: 667px;
+    top: 49px;
+  }
+  @include desktop {
+    left: 1179px;
+    top: 49px;
+  }
+}
+.Link2:hover {
+  border-bottom: 2px solid $resultColor;
+}
+.search-box {
+  position: absolute;
+  top: 118px;
+  left: 20px;
+  @include tablet {
+    position: absolute;
+    left: 216px;
+    top: 115px;
+  }
+  @include desktop {
+    left: 443px;
+    top: 116px;
+  }
+}
+::placeholder {
+  color: $textColor;
+}
+.search-input {
+  border: none;
+  color: $textColor;
+  background-color: transparent;
+  position: absolute;
+  left: 0px;
+  top: -20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  width: 90%;
+  &:focus {
+    outline: none;
+  }
+}
+.search-box:focus-visible {
+  outline-style: none;
+}
+.search-form {
+  border: 0px;
+}
+.search-input {
+  border-bottom: 1px solid $textColor;
+  width: 280px;
+  padding-left: 20px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  @include tablet {
+    width: 336px;
+  }
+  @include desktop {
+    width: 394px;
+  }
+}
+
+.form-submit {
+  background-repeat: no-repeat;
+  border: none;
+  background-position: center;
+  height: 12px;
+  width: 12px;
+  background-color: transparent;
+  backface-visibility: hidden;
+  background-image: url(/src/images/header-main/search.png);
+  background-size: 12px 12px;
+  position: absolute;
+  //top: -19px;
+  // left: 269px;
+  @include tablet {
+    left: 325px;
+  }
+  @include desktop {
+    left: 380px;
+  }
+}

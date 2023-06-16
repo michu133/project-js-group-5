@@ -1,31 +1,52 @@
-//const API_KEY = 'd793dd4ca6e7be6c8e5a071661ccb72e';
-//onst API_URL = 'https://api.themoviedb.org/3';
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer d793dd4ca6e7be6c8e5a071661ccb72e',
-  },
-};
+const API_KEY = `d793dd4ca6e7be6c8e5a071661ccb72e`;
+const API_URL = `https://api.themoviedb.org/3`;
+import Notiflix from 'notiflix';
 
 export async function getBySearch({ query = '', page = '1' }) {
-  await fetch(
-    'https://api.themoviedb.org/3/search/movie?${query}&${page}',
-    options
-  )
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+  const response = await fetch(
+    `${API_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: movies } = await response.json();
+  return movies;
 }
-export async function getAllMovies() {
-  await fetch('https://api.themoviedb.org/3/trending/all/day', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+
+export async function getTrending(page = 1) {
+  const response = await fetch(
+    `${API_URL}/trending/all/day?api_key=${API_KEY}&page=${page}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: movies } = await response.json();
+  return movies;
 }
-export async function getInfoAboutMovie(movieId, query) {
-  fetch('https://api.themoviedb.org/3/movie/movie_id', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+export async function getInfoAboutMovie(movieId) {
+  const response = await fetch(
+    `${API_URL}/movie?api_key=${API_KEY}&movie_id=${movieId}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: movie } = await response.json();
+  return movie;
+}
+export async function getMovieTrailer(movieId) {
+  const response = await fetch(
+    `${API_URL}/movie/${movieId}/videos?api_key=${API_KEY}`
+  );
+  if (!response.ok) {
+    reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
+  }
+  const { results: trailer } = await response.json();
+  return trailer;
+}
+export async function listOfGenres() {
+  const response = await fetch(
+    `${API_URL}/genre/movie/list?api_key=${API_KEY}`
+  );
+  const genres = await response.json();
+  return genres;
 }

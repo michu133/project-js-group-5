@@ -10,13 +10,26 @@
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
-    <!-- W taki sposbu dodajemy fragmenty w główny HTML-plik strony. -->
-    <include src="./partials/example.html"></include>
     <span class="loader"></span>
-    <!-- Skrypt jest na samym dole kodu. On juz ma w sobie podłączony SAAS plik. -->
+
+    <header>
+      <include src="./partials/header-main.html"></include>
+    </header>
+    <main>
+      <include src="./partials/main-body.html"></include>
+      <include src="./partials/modal.html"></include>
+    </main>
+    <include src="./partials/footer.html"></include>
+
     <script src="./index.js" type="module"></script>
   </body>
 </html>

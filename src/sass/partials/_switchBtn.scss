@@ -1,0 +1,65 @@
+.btn-switch {
+  background-color: $numbColor;
+  border: solid 3px $textColor;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 27px;
+  outline-width: 5px;
+  position: absolute;
+  width: 47px;
+  top: 35px;
+  right: 60%;
+  @include tablet {
+    left: 65%;
+    top: 40px;
+  }
+  @include desktop {
+    left: 80%;
+    top: 45px;
+  }
+}
+
+.icon {
+  background-color: $footerText;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  height: 19px;
+  margin: 16px 25px;
+  position: relative;
+  top: -16px;
+  right: 90%;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 19px;
+}
+.dark {
+  background-color: $numbColor;
+}
+.dark .icon {
+  background: $switchColor;
+  transform: translateX(15px);
+}
+.dark .icon::after {
+  content: '';
+  background-color: $numbColor;
+  display: block;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  left: -4px;
+  position: absolute;
+  top: 2px;
+}
+/* LIGHT MODE */
+.light {
+  background-color: $textColor;
+}
+
+.light .icon {
+  background: $footerText;
+  transform: translateX(0);
+}
+
+.light .icon::after {
+  content: none;
+}
