@@ -30,22 +30,28 @@
       line-height: 1.4em;
     }
   }
+
   &__icon {
     margin: 0 10px;
     color: $heart;
     transition-property: color;
     transition-duration: 750ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
     &:hover,
     &:focus {
       color: $hover-heart;
     }
   }
+
   &__link {
     color: $footerText;
+    text-decoration: underline;
   }
 }
+
 .footer-modal {
+  max-width: 100%;
   display: none;
   position: fixed;
   width: 100%;
@@ -56,11 +62,15 @@
   background-color: rgba(0, 0, 0, 0.4);
 
   &__window {
-    margin: auto;
-    height: 90%;
-    width: 90%;
+    position: absolute;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 60%;
     border: 1px solid $textColor;
-    padding: 16px;
+    border-radius: 5px;
     background-color: $textColor;
     background-image: url(../images/footer/gr5logo.svg);
     background-repeat: no-repeat;
