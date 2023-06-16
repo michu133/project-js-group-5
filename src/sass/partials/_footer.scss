@@ -30,23 +30,28 @@
       line-height: 1.4em;
     }
   }
+
   &__icon {
     margin: 0 10px;
     color: $heart;
     transition-property: color;
     transition-duration: 750ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
     &:hover,
     &:focus {
       color: $hover-heart;
     }
   }
+
   &__link {
     color: $footerText;
     text-decoration: underline;
   }
 }
+
 .footer-modal {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     display: none;
     position: fixed;
@@ -71,6 +76,8 @@
     }
 }
 =======
+=======
+>>>>>>> Stashed changes
   max-width: 100%;
   display: none;
   position: fixed;
@@ -97,5 +104,9 @@
     background-size: 30%;
     background-position: center;
   }
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
 }
 >>>>>>> Stashed changes
