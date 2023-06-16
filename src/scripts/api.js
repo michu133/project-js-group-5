@@ -43,10 +43,3 @@ export async function getMovieTrailer(movieId) {
   const { results: trailer } = await response.json();
   return trailer;
 }
-export async function listOfGenres() {
-  const response = await fetch(
-    `${API_URL}/genre/movie/list?api_key=${API_KEY}`
-  );
-  const genres = await response.json();
-  return genres;
-}
