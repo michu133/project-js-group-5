@@ -1,4 +1,4 @@
-import { getTrending } from './api';
+import { getMovieTrailer, getTrending } from './api';
 import { getGenre } from './genres';
 
 export const mainGallery = document.querySelector('.gallery');
@@ -9,6 +9,12 @@ getTrending().then(data => {
 export function showGallery(movies) {
   return movies
     .map(movie => {
+      let movieId = movie.id;
+      const keyOfTrailer = getMovieTrailer(movie.id).then(data => {
+        for (let value of data) {
+          console.log(value.key);
+        }
+      });
       let date = '';
       if (movie.release_date) {
         date = movie.release_date;
