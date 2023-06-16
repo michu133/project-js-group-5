@@ -51,33 +51,6 @@
 }
 
 .footer-modal {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-
-    &__window{
-        margin: auto;
-        height: 90%;
-        width: 90%;
-        border: 1px solid $numbColor;
-        padding: 16px;
-        background-color: $UpBackground;
-        background-image: url(../images/footer/gr5logo.svg);
-        background-repeat: no-repeat;
-            background-size: 30%;
-            background-position: center;
-    }
-}
-=======
-=======
->>>>>>> Stashed changes
   max-width: 100%;
   display: none;
   position: fixed;
@@ -104,9 +77,4 @@
     background-size: 30%;
     background-position: center;
   }
-<<<<<<< Updated upstream
 }
->>>>>>> Stashed changes
-=======
-}
->>>>>>> Stashed changes
