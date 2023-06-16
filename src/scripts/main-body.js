@@ -1,4 +1,5 @@
 import { getTrending } from './api';
+import { getGenre } from './genres';
 
 export const mainGallery = document.querySelector('.gallery');
 
@@ -25,9 +26,8 @@ export function showGallery(movies) {
         href="#" data-hystmodal="#myModal"
         />
       <p class="movie__name">${movie.title}</p>
-      <p class="movie__description">${Object.values(movie.genre_ids).join(
-        ','
-      )} | ${date.slice(0, 4)}</p>
+      <p class="movie__description"> ${getGenre(movie.genre_ids)}
+       | ${date.slice(0, 4)}</p>
     </div>
   </li>`;
     })
