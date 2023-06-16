@@ -25,7 +25,7 @@ export function showGallery(movies) {
       }
       const genre = getGenre(movie.genre_ids);
       return `<li class="movie">
-    <div class="movie__info">        
+    <div class="movie__info tracking">        
         <img class="movie__image"
         src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
         alt="movie-title"
