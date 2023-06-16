@@ -17,6 +17,7 @@ export function showGallery(movies) {
       } else {
         date = `No date`;
       }
+      const genre = getGenre(movie.genre_ids);
       return `<li class="movie">
     <div class="movie__info">        
         <img class="movie__image"
@@ -26,7 +27,7 @@ export function showGallery(movies) {
         href="#" data-hystmodal="#myModal"
         />
       <p class="movie__name">${movie.title}</p>
-      <p class="movie__description"> ${getGenre(movie.genre_ids)}
+      <p class="movie__description"> ${genre}
        | ${date.slice(0, 4)}</p>
     </div>
   </li>`;

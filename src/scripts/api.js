@@ -47,7 +47,6 @@ export async function listOfGenres() {
   const response = await fetch(
     `${API_URL}/genre/movie/list?api_key=${API_KEY}`
   );
-  const data = await response.json();
-  const genres = await data.genres;
+  const genres = await response.json();
   return genres;
 }
