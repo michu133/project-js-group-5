@@ -32,6 +32,7 @@
 }
 .dark {
   background-color: $numbColor;
+  color: $textColor;
 }
 .dark .icon {
   background: $switchColor;
@@ -51,6 +52,7 @@
 /* LIGHT MODE */
 .light {
   background-color: $textColor;
+  color: $numbColor;
 }
 
 .light .icon {
