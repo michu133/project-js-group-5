@@ -1,0 +1,68 @@
+.main-body {
+  width: 320px;
+  @include tablet {
+    width: 768px;
+  }
+  @include desktop {
+    width: 1280px;
+  }
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 20px 0 0;
+  @include tablet {
+    padding: 59px 0 0;
+    gap: 32px;
+  }
+  @include desktop {
+    gap: 32px;
+  }
+}
+.movie {
+  &__image {
+    width: 280px;
+    height: 398px;
+    border-radius: 5px;
+    @include tablet {
+      width: 336px;
+      height: 455px;
+    }
+    @include desktop {
+      width: 395px;
+      height: 574px;
+    }
+  }
+  &__info img {
+    position: relative;
+    transition: box-shadow 0.5s, transform 0.5s;
+    z-index: 0;
+    cursor: pointer;
+  }
+  &__info:hover img {
+    transform: perspective(400px) scale(102%);
+    box-shadow: -30px -13px 29px 0px $headerBackground;
+    z-index: 1;
+  }
+  &__info {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.17;
+    @include desktop {
+      font-size: 20px;
+    }
+  }
+  &__name {
+    text-transform: uppercase;
+    padding-top: 10px;
+    margin: 0;
+  }
+  &__description {
+    padding-top: 10px;
+    margin: 0;
+    color: $numbBackground;
+  }
+}

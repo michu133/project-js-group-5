@@ -1,5 +1,13 @@
-@import './common';
-@import './example';
+@import '~node_modules/modern-normalize/modern-normalize.css';
+@import './utils/_common';
 @import './utils/_mixins';
 @import './utils/_variables';
-@import './partials/footer';
+@import './partials/_header-mylibrary';
+@import './partials/_footer';
+@import './partials/_header-main';
+@import './partials/_main-body';
+@import './partials/_modal';
+@import './partials/_switchBtn';
+@import './partials/_switch-library';
+@import './partials/_library-icon';
+@import './partials/_loader';

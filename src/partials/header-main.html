@@ -1,21 +1,36 @@
-<div class="Header">
-  <div class="Filmoteka">
-    <p>Filmoteka</p>
+<div class="HeaderMain">
+  <div class="HeaderMain__TopRow">
+    <div class="HeaderMain__TopRow__Filmoteka">
+      <img
+        src="/src/images/header-main/film.png"
+        width="24px"
+        height="24px"
+        alt="Filmoteka Logo"
+        class="HeaderMain__TopRow__Filmoteka__FilmotekaLogo"
+      />
+      <p class="HeaderMain__TopRow__Filmoteka__FilmotekaText">Filmoteka</p>
+    </div>
+
+    <button class="btn-switch" aria-label="Przełącznik trybu nocnego">
+      <div class="icon"></div>
+    </button>
+    <div class="HeaderMain__Links">
+      <a class="HeaderMain__Links__Link1" href="/src/index.html">HOME</a>
+      <a class="HeaderMain__Links__Link2" href="/src/library.html"
+        >MY LIBRARY</a
+      >
+    </div>
   </div>
-  <div class="Links">
-    <a href="">Home</a>
-    <a href="">MY LIBRARY</a>
-  </div>
-  <div class="SearchBox">
-    <form class="form-search">
+  <div class="search-box">
+    <form class="search-form">
       <input
         type="text"
-        class="search-box"
+        class="search-input"
         name="search-box"
         placeholder="Movie search"
         autocomplete="off"
-      /><button type="submit" class="form-submit" />
+      />
+      <button type="submit" class="form-submit" name="button-submit" />
     </form>
-    <ul class="gallery"></ul>
   </div>
 </div>

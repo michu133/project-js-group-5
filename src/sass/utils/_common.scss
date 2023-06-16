@@ -1,0 +1,17 @@
+/* Global */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container,
+div,
+section {
+  max-width: 1280px;
+  margin: 0 auto;
+}

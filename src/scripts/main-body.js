@@ -1,26 +1,36 @@
 import { getTrending } from './api';
+import { getGenre } from './genres';
 
-export const gallery = document.querySelector('.gallery');
+export const mainGallery = document.querySelector('.gallery');
 
 getTrending().then(data => {
-  gallery.insertAdjacentHTML('beforeend', showGallery(data));
+  mainGallery.insertAdjacentHTML('beforeend', showGallery(data));
 });
 export function showGallery(movies) {
-  const genres = Object.values(movies[0].genre_ids).join(',');
   return movies
-    .map(
-      movie =>
-        `<li class="movie">
+    .map(movie => {
+      let date = '';
+      if (movie.release_date) {
+        date = movie.release_date;
+      } else if (movie.first_air_date) {
+        date = movie.first_air_date;
+      } else {
+        date = `No date`;
+      }
+      const genre = getGenre(movie.genre_ids);
+      return `<li class="movie">
     <div class="movie__info">        
         <img class="movie__image"
         src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
         alt="movie-title"
         loading="lazy"
+        href="#" data-hystmodal="#myModal"
         />
       <p class="movie__name">${movie.title}</p>
-      <p class="movie__description">${genres} | ${movie.release_date}</p>
+      <p class="movie__description"> ${genre}
+       | ${date.slice(0, 4)}</p>
     </div>
-  </li>`
-    )
+  </li>`;
+    })
     .join('');
 }

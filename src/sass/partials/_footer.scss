@@ -1,28 +1,28 @@
 .footer {
-    width: 100%;
-    padding: 30px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  padding: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 
-    @include tablet {
-        width: 768px;
-    }
+  @include tablet {
+    width: 768px;
+  }
 
-    @include desktop {
-        width: 1280px;
-    }
+  @include desktop {
+    width: 1280px;
+  }
 
-    &__bg {
-        background-color: $DownBackground;
-    }
+  &__bg {
+    background-color: $downBackground;
+  }
 
-    &__text {
-        max-width: 236px;
-        text-align: center;
-        font-size: 14px;
-        color: $footerText;
-        line-height: 1.7em;
+  &__text {
+    max-width: 236px;
+    text-align: center;
+    font-size: 14px;
+    color: $footerText;
+    line-height: 1.7em;
 
     @include tablet {
       max-width: 100%;

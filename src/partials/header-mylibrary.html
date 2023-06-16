@@ -1,0 +1,35 @@
+<header class="library-header">
+  <div class="library-header__container">
+    <a href="/src/index.html" class="library-header__logo">
+      <svg class="library-header__logo_icon" width="24" height="24">
+        <use href="/src/images/header-mylibrary/icons.svg#icon-film"></use>
+      </svg>
+      <span class="library-header__logo__name">Filmoteka</span>
+    </a>
+    <ul class="library-header__list">
+      <li class="library-header__list__item">
+        <button
+          class="btn-switch-library"
+          aria-label="Przełącznik trybu nocnego"
+        >
+          <div class="icon-library"></div>
+        </button>
+      </li>
+      <li class="library-header__list__item">
+        <a href="/src/index.html">HOME</a>
+      </li>
+      <li class="library-header__list__item">
+        <a href="/src/library.html">MY LIBRARY</a>
+      </li>
+    </ul>
+  </div>
+  <div class="library-header__buttons__containter">
+    <button class="library-header__buttons__button active" id="watchedButton">
+      WATCHED
+    </button>
+    <button class="library-header__buttons__button" id="queueButton">
+      QUEUE
+    </button>
+  </div>
+</header>
+<script src="./scripts/switchBtnLibrary.js"></script>
