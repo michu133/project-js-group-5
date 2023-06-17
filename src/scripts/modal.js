@@ -6,7 +6,7 @@ const myModal = new HystModal({
 import { getGenre } from './genres';
 import { getInfoAboutMovie } from './api';
 
-const modalMovie = document.querySelector('.movies_container');
+const modalMovie = document.querySelector('.modal');
 
 function showInfoAboutOneMovie(movieId) {
   const movie = getInfoAboutMovie(movieId).then(data => {
