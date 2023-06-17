@@ -10,8 +10,7 @@
   display: flex;
   flex-direction: column;
   opacity: 90%;
-  margin-bottom: 0;
-
+ 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     background: url(/src/images/header-main/abstract-background-with-red-lines\ x2.png);
     background-size: 100% 230px;
@@ -62,7 +61,7 @@
     display: flex;
     flex-direction: row;
     max-width: 1280px;
-    &__Filmoteka {
+        &__Filmoteka {
       display: flex;
       margin-left: 20px;
       margin-top: 40px;

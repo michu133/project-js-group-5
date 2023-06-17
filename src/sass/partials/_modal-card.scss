@@ -1,0 +1,39 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: $numbColor;
+  top: 0;
+  overflow-y: scroll;
+  padding: 3rem;
+  transform: scale(0);
+  transition: 200ms ease-in-out transform;
+  &__info {
+    display: flex;
+    align-items: flex-center;
+    gap: 3rem;
+    width: 60%;
+    margin-top: 10rem;
+    background-color: $textColor;
+    color: $numbColor;
+  }
+  &__closeBtn {
+    color: $textColor;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    cursor: pointer;
+    user-select: none;
+  }
+  &__closeBtn:hover {
+    transform: scale(1.3);
+  }
+}
+.show-popup {
+  transform: scale(1);
+}
