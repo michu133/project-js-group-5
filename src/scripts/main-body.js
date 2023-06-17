@@ -1,8 +1,7 @@
 import { getMovieTrailer, getBySearch, getInfoAboutMovie } from './api';
 import noimage from '../images/header-main/noimage.jpg';
-import { mainGallery } from './main-body';
 import { getGenre } from './genres';
-import { add_click_effect_to_card } from './main-body';
+import { addEventToCard } from './main-body';
 
 export const mainGallery = document.querySelector('.gallery');
 export const input = document.querySelector('.search-input');
@@ -13,7 +12,7 @@ const modal = document.querySelector('.modal');
 
 searchForm.addEventListener('submit', showResultsOnSearch);
 
-export function add_click_effect_to_card(cards) {
+export function addEventToCard(cards) {
   cards.forEach(card => {
     card.addEventListener('click', () => showPopUp(card));
   });
@@ -57,6 +56,7 @@ export async function showPopUp(card) {
           <p class="about_text">
             ${movie.overview}
           </p>
+          <div class="trailer"><iframe width="500" height="300" src="https://www.youtube.com/embed/${movieTrailer}" title="Youtube"></iframe></div>
           <ul class="button">
             <li class="button_item">
               <button class="button_watched" type="button">
@@ -107,16 +107,11 @@ async function showResultsOnSearch(e) {
     })
     .join('');
   const cards = document.querySelectorAll('.card');
-  add_click_effect_to_card(cards);
-}
-async function showResultsById(id) {
-  e.preventDefault();
-  const query = input.value;
-  const data = await getInfoAboutMovie({ query });
+  addEventToCard(cards);
 }
 
 async function showTrailer(id) {
   e.preventDefault();
   const query = input.value;
-  const data = await getMovieTrailer({ query });
+  const data = await getMovieTrailer(query);
 }

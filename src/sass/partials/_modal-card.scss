@@ -12,6 +12,7 @@
   padding: 3rem;
   transform: scale(0);
   transition: 200ms ease-in-out transform;
+  z-index: 1;
   &__info {
     display: flex;
     align-items: flex-center;

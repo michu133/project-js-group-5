@@ -44,5 +44,5 @@ export async function getMovieTrailer(movieId) {
     reject(Notiflix.Notify.failure('Oops, there is no movie with that name'));
   }
   const trailer = await response.json();
-  return trailer.results;
+  return trailer.results[0].key;
 }

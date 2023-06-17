@@ -2,7 +2,7 @@ import { getTrending } from './api';
 import { mainGallery } from './main-body';
 import { getGenre } from './genres';
 import noimage from '../images/header-main/noimage.jpg';
-import { add_click_effect_to_card } from './main-body';
+import { addEventToCard } from './main-body';
 
 showGallery();
 async function showGallery() {
@@ -33,5 +33,5 @@ async function showGallery() {
     })
     .join('');
   const cards = document.querySelectorAll('.card');
-  add_click_effect_to_card(cards);
+  addEventToCard(cards);
 }
