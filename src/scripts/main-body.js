@@ -1,8 +1,6 @@
 import { getMovieTrailer, getBySearch, getInfoAboutMovie } from './api';
 import noimage from '../images/header-main/noimage.jpg';
-import { mainGallery } from './main-body';
 import { getGenre } from './genres';
-import { add_click_effect_to_card } from './main-body';
 
 export const mainGallery = document.querySelector('.gallery');
 export const input = document.querySelector('.search-input');
