@@ -9,12 +9,12 @@ getTrending().then(data => {
 export function showGallery(movies) {
   return movies
     .map(movie => {
-      let movieId = movie.id;
-      const keyOfTrailer = getMovieTrailer(movie.id).then(data => {
-        for (let value of data) {
-          console.log(value.key);
-        }
-      });
+      //let movieId = movie.id;
+      //const keyOfTrailer = getMovieTrailer(movie.id).then(data => {
+      //  for (let value of data) {
+      //   console.log(value.key);
+      // }
+      //});
       let date = '';
       if (movie.release_date) {
         date = movie.release_date;
@@ -24,10 +24,13 @@ export function showGallery(movies) {
         date = `No date`;
       }
       const genre = getGenre(movie.genre_ids);
-      return `<li class="movie">
+      const poster = movie.poster_path
+        ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+        : `noposter`;
+      return `<li class="movie" data-movie="${movie.id}">
     <div class="movie__info tracking">        
         <img class="movie__image"
-        src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
+        src="https://image.tmdb.org/t/p/w500/${poster}"
         alt="movie-title"
         loading="lazy"
         href="#" data-hystmodal="#myModal"
