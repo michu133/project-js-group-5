@@ -1,8 +1,8 @@
 import { getTrending } from './api';
 import { mainGallery } from './main-body';
 import { getGenre } from './genres';
-import noimage from '../images/header-main/noimage.jpg';
 import { addEventToCard } from './main-body';
+import noimage from '../images/header-main/noimage.jpg';
 
 showGallery();
 async function showGallery() {
