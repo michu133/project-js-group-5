@@ -21,7 +21,7 @@ export async function showPopUp(card) {
   const movieId = card.getAttribute('data-movie');
   const movie = await getInfoAboutMovie(movieId);
   const movieTrailer = await getMovieTrailer(movieId);
-  console.log(movieTrailer);
+  const genres = movie.genres.map(genre => genre.id);
   const poster = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : noimage;
@@ -54,7 +54,7 @@ export async function showPopUp(card) {
             </p>
             <p class="value">${movie.popularity}</p>
             <p class="value">${movie.original_title}</p>
-            <p class="value">${getGenre(movieId)}</p>
+            <p class="value">${getGenre(genres)}</p>
           </div>
           <h2 class="about">About</h2>
           <p class="about_text">
