@@ -7,3 +7,4 @@ import * as footerModal from './scripts/footer-modal';
 import * as switchBtn from './scripts/switchBtn';
 import * as scroll from './scripts/scrollButton';
 import * as aboutMovie from './scripts/get-trending';
+import * as trailer from './scripts/trailer-modal';
