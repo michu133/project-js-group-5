@@ -8,7 +8,7 @@
 .trailer {
   margin-top: 100px;
   height: 100%;
-  overflow: hidden;
+
   align-items: center;
   justify-content: center;
 }
@@ -20,7 +20,6 @@
   width: 100px;
   height: 100px;
   background-size: 100px 100px;
-  overflow: hidden;
 }
 
 .iframe {
@@ -44,5 +43,8 @@
   overflow: hidden;
 }
 .info_text {
+  overflow: hidden;
+}
+.overflow {
   overflow: hidden;
 }
