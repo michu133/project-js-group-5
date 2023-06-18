@@ -3,7 +3,7 @@ import { mainGallery } from './main-body';
 import { getGenre } from './genres';
 import { addEventToCard } from './main-body';
 import noimage from '../images/header-main/noimage.jpg';
-
+import { trailerModal } from './trailer-modal';
 showGallery();
 async function showGallery() {
   const data = await getTrending();
@@ -22,7 +22,8 @@ async function showGallery() {
       const poster = e.poster_path
         ? `https://image.tmdb.org/t/p/w500/${e.poster_path}`
         : noimage;
-      return `<li class="card tracking" data-movie="${e.id}">
+      return `
+      <li class="card tracking" data-movie="${e.id}">
     <div class="movie__info">        
       <img class="movie__image" src="https://image.tmdb.org/t/p/w500/${poster}" alt="movie-title" loading="lazy"/>
     </div>
