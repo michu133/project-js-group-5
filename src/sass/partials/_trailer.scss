@@ -14,9 +14,10 @@
   left: 0px;
   background: opacity($color: #000000);
   border: 0px;
-  background-image: url(/src/images/header-main/play.png);
+  background-image: url(/src/images/header-main/youtube.png);
   width: 100px;
   height: 100px;
+  background-size: 100px 100px;
 }
 
 .iframe {
@@ -35,4 +36,12 @@
   border: 1px solid white;
   background-color: black;
   color: beige;
+}
+.ButtonSvgTrailer {
+  width: 1500px;
+  height: 100px;
+}
+.buttonImgTrailer {
+  width: 100px;
+  height: 100px;
 }
