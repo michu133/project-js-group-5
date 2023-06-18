@@ -3,7 +3,7 @@ import { mainGallery } from './main-body';
 import { getGenre } from './genres';
 import { addEventToCard } from './main-body';
 import noimage from '../images/header-main/noimage.jpg';
-import { trailerModal } from './trailer-modal';
+
 showGallery();
 async function showGallery() {
   const data = await getTrending();
