@@ -90,16 +90,20 @@ export async function showPopUp(card) {
 
   buttonTrailer.addEventListener('click', () => {
     traileModal.classList.remove('trailerHiden');
+    // modal.classList.remove('modal')
+    modal.classList.add('overflow');
     video.src = `https://www.youtube.com/embed/${movieTrailer}`;
   });
 
   trailer.addEventListener('click', () => {
     traileModal.classList.add('trailerHiden');
+    modal.classList.remove('overflow');
     video.src = '';
   });
 
   buttonTrailerClose.addEventListener('click', () => {
     traileModal.classList.add('trailerHiden');
+    modal.classList.remove('overflow');
     video.src = '';
   });
   modalCloseBtn.addEventListener('click', () =>
