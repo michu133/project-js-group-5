@@ -34,7 +34,7 @@ export async function showPopUp(card) {
         alt="${movie.title}"
       />
       <button class="button_trailer" type="button" id="button_trailer"
-       > Trailer</button>
+       ></button>
       <div class="info_text">
         <h1 class="info_title">${movie.title}</h1>
         <div class="info_movie">
