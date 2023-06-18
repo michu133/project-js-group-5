@@ -26,15 +26,17 @@ export async function showPopUp(card) {
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : noimage;
   modal.innerHTML = `<span class="modal__closeBtn" type="button">x</span>
+  <button class="button_trailer" type="button" id="button_trailer"
+  ></button>
   <div class="modal__info">
     <div class="container_imag">
+    
       <img
         class="img"
         src="${poster}"
         alt="${movie.title}"
       />
-      <button class="button_trailer" type="button" id="button_trailer"
-       ></button>
+  
       <div class="info_text">
         <h1 class="info_title">${movie.title}</h1>
         <div class="info_movie">
