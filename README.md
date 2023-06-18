@@ -10,6 +10,9 @@ SCSS
 JavaScript
 Node.js
 
+<br><img align="left" alt="nodejs" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white" /><img align="left" alt="javascript" src="https://img.shields.io/badge/javascript-yellow?style=for-the-badge&logo=javascript&logoColor=%23F0DB4F&color=%23323330" />
+<br>
+
 Do pokazania nieblokujących alertów i powiadomień została podłączona biblioteka Notiflix.
 
 Jako bandler był zastosowany Parcel.
