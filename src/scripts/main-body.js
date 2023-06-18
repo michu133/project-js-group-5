@@ -29,53 +29,45 @@ export async function showPopUp(card) {
   <button class="button_trailer" type="button" id="button_trailer"
   ></button>
   <div class="modal__info">
-    <div class="container_imag">
-    
-      <img
-        class="img"
-        src="${poster}"
-        alt="${movie.title}"
-      />
-  
-      <div class="info_text">
-        <h1 class="info_title">${movie.title}</h1>
-        <div class="info_movie">
-          <div class="info_name">
-            <p class="name">Vote / Votes</p>
-            <p class="name">Popularity</p>
-            <p class="name">Original Title</p>
-            <p class="name">Genre</p>
-          </div>
-          <div class="info_value">
-            <p class="value">
-              <span class="value">${
-                movie.vote_average
-              }</span>/<span class="value">${movie.vote_count}</span>
-            </p>
-            <p class="value">${movie.popularity}</p>
-            <p class="value">${movie.original_title}</p>
-            <p class="value">${getGenre(genres)}</p>
-          </div>
-          <h2 class="about">About</h2>
-          <p class="about_text">
-            ${movie.overview}
-          </p>
-          
-          
-            <li class="button_item">
-              <button class="button_watched" type="button">
-                ADD TO WATCHED
-              </button>
-            </li>
-            <li class="button_item">
-              <button class="button_queue" type="button"
-              onclick="trailerModal()">ADD TO QUEUE</button>
-            </li>
-          </ul>
-        </div>
+  <div class="container__img">
+    <img class="img" src="${poster}" alt="${movie.title}" />
+  </div>
+  <div class="container__text">
+    <div class="info__text">
+      <h1 class="info__title">${movie.title}</h1>
+    </div>
+    <div class="info__movie">
+      <div class="info__name">
+        <p class="name">Vote / Votes</p>
+        <p class="name">Popularity</p>
+        <p class="name">Original Title</p>
+        <p class="name">Genre</p>
+      </div>
+      <div class="info__value">
+        <p class="value">
+          <span class="value__orange">${
+            movie.vote_average
+          }</span>/<span class="value__white"
+            >${movie.vote_count}</span
+          >
+        </p>
+        <p class="value">${movie.popularity}</p>
+        <p class="value">${movie.original_title}</p>
+        <p class="value">${getGenre(genres)}</p>
       </div>
     </div>
+    <h2 class="about">About</h2>
+    <p class="about__text">${movie.overview}</p>
+    <ul class="button">
+      <li class="button__item">
+        <button class="button__watched" type="button">ADD TO WATCHED</button>
+      </li>
+      <li class="button__item">
+        <button class="button__queue" type="button">ADD TO QUEUE</button>
+      </li>
+    </ul>
   </div>
+</div>
   <div class="trailer__modal trailerHiden ">Trailer<div class="trailer">
   <iframe class="iframe" id="iframe" frameborder="0" border="0" cellspacing="0" allowfullscreen src="" title="Youtube">
   </iframe>

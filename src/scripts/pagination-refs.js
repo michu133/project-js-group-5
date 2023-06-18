@@ -1,0 +1,16 @@
+export const refs = {
+  btn1Ref: document.querySelector('[data-id="1"]'),
+  btn2Ref: document.querySelector('[data-id="2"]'),
+  btn3Ref: document.querySelector('[data-id="3"]'),
+  btn4Ref: document.querySelector('[data-id="4"]'),
+  btn5Ref: document.querySelector('[data-id="5"]'),
+  firstPageRef: document.querySelector('.first-btn'),
+  lastPageRef: document.querySelector('.last-btn'),
+  paginationRef: document.querySelector('.pagination-container'),
+  rightArrowRef: document.querySelector('.arrow-right'),
+  leftArrowRef: document.querySelector('.arrow-left'),
+  prevDotsRef: document.querySelector('#previous'),
+  nextDotsRef: document.querySelector('#next'),
+  paginationBtnEl: document.querySelectorAll('.pagination-btn'),
+  btns: document.querySelectorAll('.pagination-btn'),
+};

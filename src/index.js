@@ -7,3 +7,5 @@ import * as footerModal from './scripts/footer-modal';
 import * as switchBtn from './scripts/switchBtn';
 import * as scroll from './scripts/scrollButton';
 import * as aboutMovie from './scripts/get-trending';
+import * as pagination from './scripts/pagination';
+import * as paginationRefs from './scripts/pagination-refs';
