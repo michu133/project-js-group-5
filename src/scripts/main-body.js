@@ -84,11 +84,16 @@ export async function showPopUp(card) {
   const buttonTrailerClose = document.querySelector('.button_trailer-close');
   const buttonTrailer = document.querySelector('.button_trailer');
   let video = document.querySelector('.iframe');
-  console.log(video);
+  const trailer = document.querySelector('.trailer');
 
   buttonTrailer.addEventListener('click', () => {
     traileModal.classList.remove('trailerHiden');
     video.src = `https://www.youtube.com/embed/${movieTrailer}`;
+  });
+
+  trailer.addEventListener('click', () => {
+    traileModal.classList.add('trailerHiden');
+    video.src = '';
   });
 
   buttonTrailerClose.addEventListener('click', () => {
