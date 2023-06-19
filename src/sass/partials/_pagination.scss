@@ -25,27 +25,32 @@
 
 .pagination-btn {
   padding: 0;
-
+  width: 40px;
+  height: 40px;
   background-color: white;
-
   border: none;
-
   color: #000000;
-
   cursor: pointer;
-
   font-size: 12px;
+
+  &:hover,
+  &:focus {
+    background-color: #ffb27f;
+    color: rgb(255, 255, 255);
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    transition-property: background-color, width, height;
+    transition-duration: 444ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .pagination-select {
   width: 40px;
-
   height: 40px;
-
   border-radius: 5px;
-
   background-color: #ff6b08;
-
   color: white;
 }
 
@@ -72,6 +77,11 @@
   background-position: center;
 
   background-repeat: no-repeat;
+  
+  &:hover,
+  &:focus {
+    stroke: white;
+  }
 }
 
 .arrow-left {
