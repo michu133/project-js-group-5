@@ -19,6 +19,7 @@ export function addEventToCard(cards) {
 export async function showPopUp(card) {
   modalCard.classList.add('show-popup');
   const movieId = card.getAttribute('data-movie');
+
   const movie = await getInfoAboutMovie(movieId);
   const movieTrailer = await getMovieTrailer(movieId);
   const genres = movie.genres.map(genre => genre.id);
@@ -101,6 +102,68 @@ export async function showPopUp(card) {
   modalCloseBtn.addEventListener('click', () =>
     modalCard.classList.remove('show-popup')
   );
+
+  // Dodawanie do watched
+  const buttonWatched = document.querySelector('.button__watched');
+  const watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+  const movieIndexInWatched = watchedMovies.indexOf(movieId);
+
+  if (movieIndexInWatched > -1) {
+    buttonWatched.innerHTML = 'DELETE FROM WATCHED';
+  }
+
+  buttonWatched.addEventListener('click', () => {
+    addToWatched(movieId);
+  });
+
+  function addToWatched(movieId) {
+    const movieIndex = watchedMovies.indexOf(movieId);
+
+    if (movieIndex > -1) {
+      // Film jest już zapisany w zakładce Watched, więc usuń go
+      watchedMovies.splice(movieIndex, 1);
+      localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+      buttonWatched.innerHTML = 'ADD TO WATCHED';
+      console.log('Film został usunięty z zakładki Watched.');
+    } else {
+      // Film nie jest zapisany w zakładce Watched, dodaj go
+      watchedMovies.push(movieId);
+      localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+      buttonWatched.innerHTML = 'DELETE FROM WATCHED';
+      console.log('Film został dodany do zakładki Watched.');
+    }
+  }
+
+  // Dodawanie do Queue
+  const buttonQueue = document.querySelector('.button__queue');
+  const queueMovies = JSON.parse(localStorage.getItem('queueMovies')) || [];
+  const movieIndexInQueue = queueMovies.indexOf(movieId);
+
+  if (movieIndexInQueue > -1) {
+    buttonQueue.innerHTML = 'DELETE FROM QUEUE';
+  }
+
+  buttonQueue.addEventListener('click', () => {
+    addToQueue(movieId);
+  });
+
+  function addToQueue(movieId) {
+    const movieIndex = queueMovies.indexOf(movieId);
+
+    if (movieIndex > -1) {
+      // Film jest już zapisany w zakładce Queue, więc usuń go
+      queueMovies.splice(movieIndex, 1);
+      localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+      buttonQueue.innerHTML = 'ADD TO QUEUE';
+      console.log('Film został usunięty z Queue.');
+    } else {
+      // Film nie jest zapisany w zakładce Queue, dodaj go
+      queueMovies.push(movieId);
+      localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+      buttonQueue.innerHTML = 'DELETE FROM QUEUE';
+      console.log('Film został dodany do Queue.');
+    }
+  }
 }
 
 async function showResultsOnSearch(e) {
