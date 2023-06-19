@@ -1,6 +1,8 @@
 import { getMovieTrailer, getBySearch, getInfoAboutMovie } from './api';
+import { showGallery } from './get-trending';
 import noimage from '../images/header-main/noimage.jpg';
 import { getGenre } from './genres';
+import Notiflix from 'notiflix';
 
 export const mainGallery = document.querySelector('.gallery');
 export const input = document.querySelector('.search-input');
@@ -48,7 +50,7 @@ export async function showPopUp(card) {
         <p class="value">
           <span class="value__orange">${
             movie.vote_average
-          }</span>/<span class="value__white"
+          }</span> / <span class="value__white"
             >${movie.vote_count}</span
           >
         </p>
@@ -124,13 +126,11 @@ export async function showPopUp(card) {
       watchedMovies.splice(movieIndex, 1);
       localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
       buttonWatched.innerHTML = 'ADD TO WATCHED';
-      console.log('Film został usunięty z zakładki Watched.');
     } else {
       // Film nie jest zapisany w zakładce Watched, dodaj go
       watchedMovies.push(movieId);
       localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
       buttonWatched.innerHTML = 'DELETE FROM WATCHED';
-      console.log('Film został dodany do zakładki Watched.');
     }
   }
 
@@ -155,13 +155,11 @@ export async function showPopUp(card) {
       queueMovies.splice(movieIndex, 1);
       localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
       buttonQueue.innerHTML = 'ADD TO QUEUE';
-      console.log('Film został usunięty z Queue.');
     } else {
       // Film nie jest zapisany w zakładce Queue, dodaj go
       queueMovies.push(movieId);
       localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
       buttonQueue.innerHTML = 'DELETE FROM QUEUE';
-      console.log('Film został dodany do Queue.');
     }
   }
 }
@@ -170,6 +168,11 @@ async function showResultsOnSearch(e) {
   e.preventDefault();
   const query = input.value;
   const data = await getBySearch(query);
+  if (data.length === 0) {
+    showGallery();
+    return Notiflix.Notify.failure('Oops, there is no movie with that name');
+  }
+  console.log(data);
   mainGallery.innerHTML = data
     .map(movie => {
       let date = '';
