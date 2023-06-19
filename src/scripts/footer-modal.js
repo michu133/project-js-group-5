@@ -17,7 +17,13 @@ footerModalCloseBtn.addEventListener('click', () => {
   footerModalIntro.classList.remove("invisible");
   footerModalContent.classList.add("invisible");
 });
-
+document.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape') {
+          footerModal.classList.add("invisible");
+    footerModalIntro.classList.remove("invisible");
+    footerModalContent.classList.add("invisible");
+    }
+});
 window.addEventListener('click', evt => {
   if (evt.target === footerModal) {
     footerModal.classList.add("invisible");
