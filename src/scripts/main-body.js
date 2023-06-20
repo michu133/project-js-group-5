@@ -28,11 +28,13 @@ export async function showPopUp(card) {
   const poster = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : noimage;
-  modal.innerHTML = `<span class="modal__closeBtn" type="button">x</span>
+  modal.innerHTML = `
+  <div class="modal__info">
+  <span class="modal__closeBtn" type="button">x</span>
+  <div class="container__img">
+  
   <button class="button_trailer" type="button" id="button_trailer"
   ></button>
-  <div class="modal__info">
-  <div class="container__img">
     <img class="img" src="${poster}" alt="${movie.title}" />
   </div>
   <div class="container__text">
@@ -59,7 +61,7 @@ export async function showPopUp(card) {
         <p class="value">${getGenre(genres)}</p>
       </div>
     </div>
-    <h2 class="about">About</h2>
+    <h2 class="about">ABOUT</h2>
     <p class="about__text">${movie.overview}</p>
     <ul class="button">
       <li class="button__item">
