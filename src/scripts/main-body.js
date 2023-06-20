@@ -28,11 +28,13 @@ export async function showPopUp(card) {
   const poster = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : noimage;
-  modal.innerHTML = `<span class="modal__closeBtn" type="button">x</span>
+  modal.innerHTML = `
+  <div class="modal__info">
+  <span class="modal__closeBtn" type="button">x</span>
+  <div class="container__img">
+  
   <button class="button_trailer" type="button" id="button_trailer"
   ></button>
-  <div class="modal__info">
-  <div class="container__img">
     <img class="img" src="${poster}" alt="${movie.title}" />
   </div>
   <div class="container__text">
@@ -59,7 +61,7 @@ export async function showPopUp(card) {
         <p class="value">${getGenre(genres)}</p>
       </div>
     </div>
-    <h2 class="about">About</h2>
+    <h2 class="about">ABOUT</h2>
     <p class="about__text">${movie.overview}</p>
     <ul class="button">
       <li class="button__item">
@@ -82,17 +84,21 @@ export async function showPopUp(card) {
   const buttonTrailer = document.querySelector('.button_trailer');
   let video = document.querySelector('.iframe');
   const trailer = document.querySelector('.trailer');
+  const modalInfo = document.querySelector('.modal__info');
 
   buttonTrailer.addEventListener('click', () => {
     traileModal.classList.remove('trailerHiden');
     // modal.classList.remove('modal')
+    modalInfo.classList.add('hidden');
     modal.classList.add('overflow');
+
     video.src = `https://www.youtube.com/embed/${movieTrailer}`;
   });
 
   trailer.addEventListener('click', () => {
     traileModal.classList.add('trailerHiden');
     modal.classList.remove('overflow');
+    modalInfo.classList.remove('hidden');
     video.src = '';
   });
 
