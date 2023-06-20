@@ -84,17 +84,21 @@ export async function showPopUp(card) {
   const buttonTrailer = document.querySelector('.button_trailer');
   let video = document.querySelector('.iframe');
   const trailer = document.querySelector('.trailer');
+  const modalInfo = document.querySelector('.modal__info');
 
   buttonTrailer.addEventListener('click', () => {
     traileModal.classList.remove('trailerHiden');
     // modal.classList.remove('modal')
+    modalInfo.classList.add('hidden');
     modal.classList.add('overflow');
+
     video.src = `https://www.youtube.com/embed/${movieTrailer}`;
   });
 
   trailer.addEventListener('click', () => {
     traileModal.classList.add('trailerHiden');
     modal.classList.remove('overflow');
+    modalInfo.classList.remove('hidden');
     video.src = '';
   });
 

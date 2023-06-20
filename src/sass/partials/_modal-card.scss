@@ -119,7 +119,7 @@
     flex-direction: column;
     margin: 0px 0px 0px 0px;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 1.33;
     padding-right: 20px;
     @include desktop {
       padding-right: 80px;
@@ -128,8 +128,9 @@
   &__value {
     display: flex;
     flex-direction: column;
+    font-weight: 500;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 1.33;
     margin: 0px 0px 0px 0px;
   }
 }
@@ -191,6 +192,7 @@
     justify-content: flex-start;
   }
   @include desktop {
+    margin: 20px 0px 40px 24px;
   }
   &__item {
     margin: 0;
