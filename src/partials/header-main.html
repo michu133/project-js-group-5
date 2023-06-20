@@ -1,13 +1,9 @@
 <div class="HeaderMain">
   <div class="HeaderMain__TopRow">
     <div class="HeaderMain__TopRow__Filmoteka">
-      <img
-        src="/src/images/header-main/film.png"
-        width="24px"
-        height="24px"
-        alt="Filmoteka Logo"
-        class="HeaderMain__TopRow__Filmoteka__FilmotekaLogo"
-      />
+      <svg class="library-header__logo_icon-main" width="24" height="24">
+        <use href="/src/images/header-mylibrary/icons.svg#icon-film"></use>
+      </svg>
       <a
         class="HeaderMain__TopRow__Filmoteka__FilmotekaText"
         href="/src/index.html"
@@ -15,7 +11,10 @@
       >
     </div>
 
-    <button class="btn-switch" aria-label="Przełącznik trybu nocnego">
+    <button
+      class="btn-switch-library btn-switch-main btn-switch"
+      aria-label="Przełącznik trybu nocnego"
+    >
       <div class="icon"></div>
     </button>
     <div class="HeaderMain__Links">
