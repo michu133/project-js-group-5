@@ -2,7 +2,7 @@ import { refs } from './pagination-refs';
 
 refs.paginationRef.addEventListener('click', onPaginationClick);
 
-let currentPage = 1;
+export let currentPage = 1;
 
 let btns = document.querySelectorAll('.pagination-btn');
 
@@ -104,4 +104,26 @@ export function resetPage() {
   refs.btn1Ref.classList.add('pagination-select');
   currentPage = refs.btn1Ref.textContent;
   leftArrowBuild(true);
+  page = currentPage;
+  return page;
+}
+refs.paginationRef.addEventListener('click', onCurrentPage);
+
+export function onCurrentPage(event) {
+  if (event.target.classList.contains('pagination-btn')) {
+    let currentPage = Number(event.target.textContent);
+
+    if (refs.inputEl === '') {
+      if (currentPage > 0) {
+        onPaginationBtn(currentPage);
+      } else if (event.target.classList.contains('arrow-right')) {
+        currentPage = +refs.btn1Ref.textContent;
+        onPaginationBtn(currentPage);
+      } else if (event.target.classList.contains('arrow-left')) {
+        currentPage = +refs.btn5Ref.textContent;
+        onPaginationBtn(currentPage);
+      }
+    }
+  }
+  return console.log(currentPage), currentPage;
 }
