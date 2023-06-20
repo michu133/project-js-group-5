@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   opacity: 90%;
- 
+
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     background: url(/src/images/header-main/abstract-background-with-red-lines\ x2.png);
     background-size: 100% 230px;
@@ -61,7 +61,7 @@
     display: flex;
     flex-direction: row;
     max-width: 1280px;
-        &__Filmoteka {
+    &__Filmoteka {
       display: flex;
       margin-left: 20px;
       margin-top: 40px;
@@ -84,23 +84,23 @@
 
         @include tablet {
           font-size: 30px;
-          margin: 0px 0px 0px 10px;
+          margin: 0px 0px 0px 11px;
         }
         @include desktop {
           font-size: 30px;
-          margin: 0px 0px 0px 10px;
         }
       }
     }
   }
   &__Links {
-    margin: 44px 20px;
+    margin: 44px 20px 0px 0px;
+    padding: 0px;
     @include tablet {
       margin-right: 33px;
     }
 
     &__Link1 {
-      margin-right: 40px;
+      margin-right: 36px;
       font-weight: 500;
       font-size: 12px;
       line-height: 1.16;
@@ -146,6 +146,7 @@
 }
 .search-box {
   position: relative;
+  margin-top: 56px;
 }
 .search-form {
   border: 0px;
@@ -183,4 +184,11 @@
   @include desktop {
     left: 380px;
   }
+}
+.btn-switch-main {
+  margin-top: 44px;
+  margin-right: 39px;
+}
+.library-header__logo_icon-main {
+  margin-top: 3px;
 }
