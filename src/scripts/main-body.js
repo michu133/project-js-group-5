@@ -178,7 +178,7 @@ async function showResultsOnSearch(e) {
     showGallery();
     return Notiflix.Notify.failure('Oops, there is no movie with that name');
   }
-
+  console.log(data);
   mainGallery.innerHTML = data
     .map(movie => {
       let date = '';
