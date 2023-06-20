@@ -1,10 +1,13 @@
 import { getInfoAboutMovie } from './api';
 import { getGenre } from './genres';
+import { refs } from './pagination-refs';
 
 const galleryIcon = document.querySelector('.movie-icon');
 const galleryLibrary = document.querySelector('.gallery-library');
 const watchedButton = document.querySelector('#watchedButton');
 const queueButton = document.querySelector('#queueButton');
+
+refs.paginationRef.classList.add('is-hidden');
 // Kliknięcie przycisku watched wyświetla watchedMovies
 watchedButton.addEventListener('click', () => {
   displayMoviesFromLocalStorage('watchedMovies');
@@ -24,7 +27,7 @@ async function displayMoviesFromLocalStorage(key) {
   //Sprawdzanie czy localstorage jest pusty, jeśli nie jest to galleryIcon znika
   if (data && data.length > 0) {
     galleryIcon.innerHTML = '';
-
+    refs.paginationRef.classList.remove('is-hidden');
     if (data && data.length > 0) {
       clearGallery();
 

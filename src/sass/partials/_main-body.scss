@@ -91,3 +91,18 @@
     opacity: 1;
   }
 }
+
+.gallery-library {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 20px 0 0;
+  @include tablet {
+    padding: 59px 0 0;
+    gap: 32px;
+  }
+  @include desktop {
+    gap: 32px;
+  }
+}

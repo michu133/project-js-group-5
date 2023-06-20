@@ -1,8 +1,8 @@
 import { getMovieTrailer, getBySearch, getInfoAboutMovie } from './api';
 import { showGallery } from './get-trending';
-import noimage from '../images/header-main/noimage.jpg';
-import { getGenre } from './genres';
 import Notiflix from 'notiflix';
+import { markupModal } from './markup-modal';
+import { markup } from './markup';
 
 export const mainGallery = document.querySelector('.gallery');
 export const input = document.querySelector('.search-input');
@@ -24,60 +24,7 @@ export async function showPopUp(card) {
 
   const movie = await getInfoAboutMovie(movieId);
   const movieTrailer = await getMovieTrailer(movieId);
-  const genres = movie.genres.map(genre => genre.id);
-  const poster = movie.poster_path
-    ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-    : noimage;
-  modal.innerHTML = `
-  <div class="modal__info">
-  <span class="modal__closeBtn" type="button">x</span>
-  <div class="container__img">
-  
-  <button class="button_trailer" type="button" id="button_trailer"
-  ></button>
-    <img class="img" src="${poster}" alt="${movie.title}" />
-  </div>
-  <div class="container__text">
-    <div class="info__text">
-      <h1 class="info__title">${movie.title}</h1>
-    </div>
-    <div class="info__movie">
-      <div class="info__name">
-        <p class="name">Vote / Votes</p>
-        <p class="name">Popularity</p>
-        <p class="name">Original Title</p>
-        <p class="name">Genre</p>
-      </div>
-      <div class="info__value">
-        <p class="value">
-          <span class="value__orange">${
-            movie.vote_average
-          }</span> / <span class="value__white"
-            >${movie.vote_count}</span
-          >
-        </p>
-        <p class="value">${movie.popularity}</p>
-        <p class="value">${movie.original_title}</p>
-        <p class="value">${getGenre(genres)}</p>
-      </div>
-    </div>
-    <h2 class="about">ABOUT</h2>
-    <p class="about__text">${movie.overview}</p>
-    <ul class="button">
-      <li class="button__item">
-        <button class="button__watched" type="button">ADD TO WATCHED</button>
-      </li>
-      <li class="button__item">
-        <button class="button__queue" type="button">ADD TO QUEUE</button>
-      </li>
-    </ul>
-  </div>
-</div>
-  <div class="trailer__modal trailerHiden ">Trailer<div class="trailer">
-  <iframe class="iframe" id="iframe" frameborder="0" border="0" cellspacing="0" allowfullscreen src="" title="Youtube">
-  </iframe>
-  <button class="button_trailer-close">X</button></div></div>
-  `;
+  modal.innerHTML = markupModal(movie);
   const modalCloseBtn = document.querySelector('.modal__closeBtn');
   const traileModal = document.querySelector('.trailer__modal');
   const buttonTrailerClose = document.querySelector('.button_trailer-close');
@@ -118,6 +65,9 @@ export async function showPopUp(card) {
 
   if (movieIndexInWatched > -1) {
     buttonWatched.innerHTML = 'DELETE FROM WATCHED';
+    buttonWatched.style.backgroundColor = '#ff6b01';
+  } else {
+    buttonWatched.style.backgroundColor = '#fff';
   }
 
   buttonWatched.addEventListener('click', () => {
@@ -132,11 +82,13 @@ export async function showPopUp(card) {
       watchedMovies.splice(movieIndex, 1);
       localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
       buttonWatched.innerHTML = 'ADD TO WATCHED';
+      buttonWatched.style.backgroundColor = '#fff';
     } else {
       // Film nie jest zapisany w zakładce Watched, dodaj go
       watchedMovies.push(movieId);
       localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
       buttonWatched.innerHTML = 'DELETE FROM WATCHED';
+      buttonWatched.style.backgroundColor = '#ff6b01';
     }
   }
 
@@ -147,6 +99,7 @@ export async function showPopUp(card) {
 
   if (movieIndexInQueue > -1) {
     buttonQueue.innerHTML = 'DELETE FROM QUEUE';
+    buttonQueue.style.backgroundColor = '#ff6b01';
   }
 
   buttonQueue.addEventListener('click', () => {
@@ -161,11 +114,13 @@ export async function showPopUp(card) {
       queueMovies.splice(movieIndex, 1);
       localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
       buttonQueue.innerHTML = 'ADD TO QUEUE';
+      buttonQueue.style.backgroundColor = '#fff';
     } else {
       // Film nie jest zapisany w zakładce Queue, dodaj go
       queueMovies.push(movieId);
       localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
       buttonQueue.innerHTML = 'DELETE FROM QUEUE';
+      buttonQueue.style.backgroundColor = '#ff6b01';
     }
   }
 }
@@ -178,32 +133,7 @@ async function showResultsOnSearch(e) {
     showGallery();
     return Notiflix.Notify.failure('Oops, there is no movie with that name');
   }
-  console.log(data);
-  mainGallery.innerHTML = data
-    .map(movie => {
-      let date = '';
-      if (movie.release_date) {
-        date = movie.release_date;
-      } else if (movie.first_air_date) {
-        date = movie.first_air_date;
-      } else {
-        date = `No date`;
-      }
-      const genre = getGenre(movie.genre_ids);
-      const poster = movie.poster_path
-        ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-        : noimage;
-      return `
-    <li class="card tracking" data-movie="${movie.id}">
-      <div class="movie__info">        
-        <img class="movie__image" src="https://image.tmdb.org/t/p/w500/${poster}" alt="movie-title" loading="lazy"/>
-      </div>
-    <p class="movie__name">${movie.title}</p>
-    <p class="movie__description"> ${genre}
-     | ${date.slice(0, 4)}</p>
-  </li>`;
-    })
-    .join('');
+  mainGallery.innerHTML = markup(data);
   const cards = document.querySelectorAll('.card');
   addEventToCard(cards);
 }
